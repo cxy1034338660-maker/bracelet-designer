@@ -1,6 +1,6 @@
 # Bead Bracelet Designer
 
-React + Vite 可部署版本。
+标准 React + Vite 可部署项目。
 
 ## 本地运行
 
@@ -13,43 +13,42 @@ npm run dev
 
 ```bash
 npm run build
+npm run preview
 ```
 
-构建产物会输出到 `dist/`。
+构建输出目录：`dist`
 
-## 部署到 Vercel
+## Vercel 设置
 
-1. 将整个项目上传到 GitHub。
-2. 打开 Vercel，点击 **Add New Project**。
-3. 选择此仓库。
-4. Framework 选择 **Vite**。
-5. Build Command：`npm run build`
-6. Output Directory：`dist`
-7. 点击 Deploy。
+- Framework Preset: Vite
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Output Directory: `dist`
 
-## 部署到 Netlify
+`vercel.json` 已配置：
 
-1. 将整个项目上传到 GitHub。
-2. 打开 Netlify，点击 **Add new site**。
-3. 选择 GitHub 仓库。
-4. Build Command：`npm run build`
-5. Publish directory：`dist`
-6. 点击 Deploy。
+```json
+{
+  "framework": "vite",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
+}
+```
 
-## 数据存储
-
-保存作品、灵感图片使用浏览器 `localStorage`，无需服务器。
-
-## 素材路径
-
-图片素材放在：
+## 项目结构
 
 ```text
+package.json
+vite.config.js
+vercel.json
+index.html
+src/main.jsx
+src/App.jsx
+src/styles.css
 public/assets/
 ```
 
-当前吊坠素材：
+## 数据保存
 
-```text
-public/assets/hexagram-pendant.png
-```
+作品与灵感上传使用浏览器 `localStorage` 保存。
