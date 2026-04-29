@@ -1,11 +1,11 @@
 # Bead Bracelet Designer
 
-标准 React + Vite 可部署项目。
+React + Vite 可部署版本。
 
 ## 本地运行
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -13,42 +13,18 @@ npm run dev
 
 ```bash
 npm run build
-npm run preview
 ```
 
 构建输出目录：`dist`
 
-## Vercel 设置
+## GitHub Pages 部署
 
-- Framework Preset: Vite
-- Install Command: `npm install`
-- Build Command: `npm run build`
-- Output Directory: `dist`
+1. 解压 zip 并上传全部文件到 GitHub 仓库根目录。
+2. 到 Settings → Pages，将 Source 设置为 **GitHub Actions**。
+3. 推送到 `main` 分支后会自动部署。
 
-`vercel.json` 已配置：
+## 关键修复
 
-```json
-{
-  "framework": "vite",
-  "installCommand": "npm install",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist"
-}
-```
-
-## 项目结构
-
-```text
-package.json
-vite.config.js
-vercel.json
-index.html
-src/main.jsx
-src/App.jsx
-src/styles.css
-public/assets/
-```
-
-## 数据保存
-
-作品与灵感上传使用浏览器 `localStorage` 保存。
+- `vite.config.js` 使用 `base: './'`，避免 GitHub Pages 子路径导致白屏。
+- `public/.nojekyll` 已添加。
+- 图片路径使用 `import.meta.env.BASE_URL`，部署路径变化也能正常加载。

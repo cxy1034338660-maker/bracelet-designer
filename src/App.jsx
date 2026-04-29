@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 
-const ASSET_PENDANT = '/assets/hexagram-pendant.png';
+const ASSET_PENDANT = `${import.meta.env.BASE_URL}assets/hexagram-pendant.png`;
 
 const BEADS = [
   { id:'rose_quartz', name:'粉晶', size:10, color:'#e67f96', shine:'#ffd6df', type:'水晶', colorType:'粉色', texture:'cloud' },
